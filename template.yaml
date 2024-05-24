@@ -14,7 +14,7 @@ Resources:
   CryptoPriceHistoryTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: "crypto-price-search-history-${EnvironmentName}"
+      TableName: !Sub 'crypto-price-search-history-${ EnvironmentName }'
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: N
@@ -27,7 +27,7 @@ Resources:
   CryptoApiRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: "crypto-search-api-role-${EnvironmentName}"
+      RoleName: !Sub 'crypto-search-api-role-${ EnvironmentName }'
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
